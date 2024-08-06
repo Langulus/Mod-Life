@@ -7,6 +7,7 @@
 ///                                                                           
 #pragma once
 #include <Langulus.hpp>
+#include <Flow/Factory.hpp>
 
 using namespace Langulus;
 
@@ -16,8 +17,8 @@ struct Organism;
 
 #if 1
    #define VERBOSE_LIFE_ENABLED() 1
-   #define VERBOSE_LIFE(...)      Logger::Input(Self(), __VA_ARGS__)
-   #define VERBOSE_LIFE_TAB(...)  const auto tab = Logger::InputTab(Self(), __VA_ARGS__)
+   #define VERBOSE_LIFE(...)      Logger::Info(Self(), __VA_ARGS__)
+   #define VERBOSE_LIFE_TAB(...)  const auto tab = Logger::InfoTab(Self(), __VA_ARGS__)
 #else
    #define VERBOSE_LIFE_ENABLED() 0
    #define VERBOSE_LIFE(...)      LANGULUS(NOOP)

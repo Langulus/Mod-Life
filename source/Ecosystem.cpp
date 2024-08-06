@@ -12,7 +12,7 @@
 /// Ecosystem construction                                                    
 ///   @param producer - the system producer                                   
 ///   @param descriptor - instructions for configuring the ecosystem          
-Ecosystem::Ecosystem(InputSDL* producer, const Neat& descriptor)
+Ecosystem::Ecosystem(Life* producer, const Neat& descriptor)
    : Resolvable   {this}
    , ProducedFrom {producer, descriptor}
    , mOrganisms   {this} {
