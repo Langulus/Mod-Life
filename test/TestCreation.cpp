@@ -6,6 +6,7 @@
 /// SPDX-License-Identifier: GPL-3.0-or-later                                 
 ///                                                                           
 #include "Main.hpp"
+#include <Langulus/Life.hpp>
 #include <catch2/catch.hpp>
 
 
@@ -15,49 +16,49 @@ CATCH_TRANSLATE_EXCEPTION(::Langulus::Exception const& ex) {
    return ::std::string {Token {serialized}};
 }
 
-SCENARIO("Input handler creation", "[input]") {
+SCENARIO("Ecosystem and Organism creation", "[life]") {
    static Allocator::State memoryState;
    
    for (int repeat = 0; repeat != 10; ++repeat) {
       GIVEN(std::string("Init and shutdown cycle #") + std::to_string(repeat)) {
          // Create root entity                                          
-         auto root = Thing::Root<false>("InputSDL");
+         auto root = Thing::Root<false>("Life");
 
-         WHEN("The input gatherer is created via abstractions") {
-            auto gatherer = root.CreateUnit<A::InputGatherer>();
-            auto listener = root.CreateUnit<A::InputListener>();
+         WHEN("Components created via abstractions") {
+            auto ecosystem = root.CreateUnit<A::Ecosystem>();
+            auto organism = root.CreateUnit<A::Organism>();
 
             // Update once                                              
             root.Update(Time::zero());
             root.DumpHierarchy();
 
-            REQUIRE(gatherer.GetCount() == 1);
-            REQUIRE(gatherer.CastsTo<A::InputGatherer>(1));
-            REQUIRE(gatherer.IsSparse());
+            REQUIRE(ecosystem.GetCount() == 1);
+            REQUIRE(ecosystem.CastsTo<A::Ecosystem>(1));
+            REQUIRE(ecosystem.IsSparse());
 
-            REQUIRE(listener.GetCount() == 1);
-            REQUIRE(listener.CastsTo<A::InputListener>(1));
-            REQUIRE(listener.IsSparse());
+            REQUIRE(organism.GetCount() == 1);
+            REQUIRE(organism.CastsTo<A::Organism>(1));
+            REQUIRE(organism.IsSparse());
 
             REQUIRE(root.GetUnits().GetCount() == 2);
          }
 
       #if LANGULUS_FEATURE(MANAGED_REFLECTION)
-         WHEN("The input gatherer is created via tokens") {
-            auto gatherer = root.CreateUnitToken("InputGatherer");
-            auto listener = root.CreateUnitToken("InputListener");
+         WHEN("Components created via tokens") {
+            auto ecosystem = root.CreateUnitToken("Ecosystem");
+            auto organism = root.CreateUnitToken("Organism");
 
             // Update once                                              
             root.Update(Time::zero());
             root.DumpHierarchy();
 
-            REQUIRE(gatherer.GetCount() == 1);
-            REQUIRE(gatherer.CastsTo<A::InputGatherer>(1));
-            REQUIRE(gatherer.IsSparse());
+            REQUIRE(ecosystem.GetCount() == 1);
+            REQUIRE(ecosystem.CastsTo<A::Ecosystem>(1));
+            REQUIRE(ecosystem.IsSparse());
 
-            REQUIRE(listener.GetCount() == 1);
-            REQUIRE(listener.CastsTo<A::InputListener>(1));
-            REQUIRE(listener.IsSparse());
+            REQUIRE(organism.GetCount() == 1);
+            REQUIRE(organism.CastsTo<A::Organism>(1));
+            REQUIRE(organism.IsSparse());
 
             REQUIRE(root.GetUnits().GetCount() == 2);
          }
