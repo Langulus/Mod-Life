@@ -15,9 +15,9 @@
 ///                                                                           
 /// Manages and produces ecosystems                                           
 ///                                                                           
-struct Life final : A::Module {
+struct Life final : A::Life {
    LANGULUS(ABSTRACT) false;
-   LANGULUS_BASES(A::Module);
+   LANGULUS_BASES(A::Life);
    LANGULUS_VERBS(Verbs::Create);
 
 private:

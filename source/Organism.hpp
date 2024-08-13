@@ -14,10 +14,10 @@
 ///                                                                           
 /// An animal, plant, or bacteria - a functional part of an ecosystem.        
 ///                                                                           
-struct Organism final : A::Unit, ProducedFrom<Ecosystem> {
+struct Organism final : A::Organism, ProducedFrom<Ecosystem> {
    LANGULUS(ABSTRACT) false;
    LANGULUS(PRODUCER) Ecosystem;
-   LANGULUS_BASES(A::Unit);
+   LANGULUS_BASES(A::Organism);
 
 public:
    Organism(Ecosystem*, const Neat&);

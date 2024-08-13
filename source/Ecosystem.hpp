@@ -14,10 +14,10 @@
 ///                                                                           
 /// A place where organisms interact with each other and the world.           
 ///                                                                           
-struct Ecosystem final : A::Unit, ProducedFrom<Life> {
+struct Ecosystem final : A::Ecosystem, ProducedFrom<Life> {
    LANGULUS(ABSTRACT) false;
    LANGULUS(PRODUCER) Life;
-   LANGULUS_BASES(A::Unit);
+   LANGULUS_BASES(A::Ecosystem);
    LANGULUS_VERBS(Verbs::Create);
 
 private:

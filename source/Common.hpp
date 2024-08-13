@@ -7,6 +7,7 @@
 ///                                                                           
 #pragma once
 #include <Langulus.hpp>
+#include <Langulus/Life.hpp>
 #include <Flow/Factory.hpp>
 
 using namespace Langulus;
