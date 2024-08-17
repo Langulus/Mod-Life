@@ -26,16 +26,13 @@ Life::Life(Runtime* runtime, const Neat&)
    VERBOSE_LIFE("Initialized");
 }
 
-///                                                                           
-Life::~Life() {
-
-}
-
 /// Module update routine                                                     
 ///   @param deltaTime - time between updates                                 
-///   @return false if the UI requested exit                                  
+///   @return false                                                           
 bool Life::Update(Time deltaTime) {
-   return true;
+   for (auto& ecosystem : mEcosystems)
+      ecosystem.Update(deltaTime);
+   return false;
 }
 
 /// Create/Destroy ecosystems                                                 

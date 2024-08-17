@@ -19,8 +19,15 @@ struct Organism final : A::Organism, ProducedFrom<Ecosystem> {
    LANGULUS(PRODUCER) Ecosystem;
    LANGULUS_BASES(A::Organism);
 
+private:
+   // A private hierarchy of organs and tissues                         
+   // These will get spilled when the organism dies and can no longer   
+   // maintain filtering the verbs (a.k.a. homeostasis).                
+   Thing mAnatomy;
+
 public:
    Organism(Ecosystem*, const Neat&);
 
+   bool Update(Time);
    void Refresh();
 };

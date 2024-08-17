@@ -21,15 +21,19 @@ Ecosystem::Ecosystem(Life* producer, const Neat& descriptor)
    VERBOSE_LIFE("Initialized");
 }
 
-/// Shutdown the module                                                       
-Ecosystem::~Ecosystem() {
-
-}
-
 /// Produce GUI elements in the system                                        
 ///   @param verb - creation verb to satisfy                                  
 void Ecosystem::Create(Verb& verb) {
    mOrganisms.Create(verb);
+}
+
+/// Ecosystem update routine                                                  
+///   @param deltaTime - time between updates                                 
+///   @return false                                                           
+bool Ecosystem::Update(Time deltaTime) {
+   for (auto& organism : mOrganisms)
+      organism.Update(deltaTime);
+   return false;
 }
 
 /// React on environmental change                                             

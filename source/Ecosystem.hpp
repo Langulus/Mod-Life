@@ -26,8 +26,8 @@ private:
 
 public:
    Ecosystem(Life*, const Neat&);
-   ~Ecosystem();
 
+   bool Update(Time);
    void Create(Verb&);
    void Refresh();
 };

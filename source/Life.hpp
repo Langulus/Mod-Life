@@ -26,7 +26,6 @@ private:
 
 public:
    Life(Runtime*, const Neat&);
-   ~Life();
 
    bool Update(Time);
    void Create(Verb&);

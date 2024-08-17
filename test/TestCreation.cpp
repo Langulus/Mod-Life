@@ -29,7 +29,7 @@ SCENARIO("Ecosystem and Organism creation", "[life]") {
             auto organism = root.CreateUnit<A::Organism>();
 
             // Update once                                              
-            root.Update(Time::zero());
+            root.Update({});
             root.DumpHierarchy();
 
             REQUIRE(ecosystem.GetCount() == 1);
@@ -49,7 +49,7 @@ SCENARIO("Ecosystem and Organism creation", "[life]") {
             auto organism = root.CreateUnitToken("Organism");
 
             // Update once                                              
-            root.Update(Time::zero());
+            root.Update({});
             root.DumpHierarchy();
 
             REQUIRE(ecosystem.GetCount() == 1);

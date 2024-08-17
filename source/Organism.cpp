@@ -9,7 +9,7 @@
 #include "Life.hpp"
 
 
-/// Listener construction                                                     
+/// Organism construction                                                     
 ///   @param producer - the producer                                          
 ///   @param descriptor - instructions for configuring the organism           
 Organism::Organism(Ecosystem* producer, const Neat& descriptor)
@@ -18,6 +18,14 @@ Organism::Organism(Ecosystem* producer, const Neat& descriptor)
    VERBOSE_LIFE("Initializing...");
    Couple(descriptor);
    VERBOSE_LIFE("Initialized");
+}
+
+/// Organism update routine                                                   
+///   @param deltaTime - time between updates                                 
+///   @return false                                                           
+bool Organism::Update(Time deltaTime) {
+   //TODO
+   return false;
 }
 
 /// React on environmental change                                             
