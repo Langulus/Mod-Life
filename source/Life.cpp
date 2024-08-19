@@ -21,7 +21,7 @@ LANGULUS_DEFINE_MODULE(
 Life::Life(Runtime* runtime, const Neat&)
    : Resolvable {this}
    , A::Module  {runtime}
-   , mEcosystems{this} {
+   /*, mEcosystems{this}*/ {
    VERBOSE_LIFE("Initializing...");
    VERBOSE_LIFE("Initialized");
 }
@@ -38,5 +38,5 @@ bool Life::Update(Time deltaTime) {
 /// Create/Destroy ecosystems                                                 
 ///   @param verb - the creation/destruction verb                             
 void Life::Create(Verb& verb) {
-   mEcosystems.Create(verb);
+   mEcosystems.Create(this, verb);
 }
