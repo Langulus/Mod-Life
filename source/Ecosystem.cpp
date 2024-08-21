@@ -14,8 +14,7 @@
 ///   @param descriptor - instructions for configuring the ecosystem          
 Ecosystem::Ecosystem(Life* producer, const Neat& descriptor)
    : Resolvable   {this}
-   , ProducedFrom {producer, descriptor}
-   /*, mOrganisms   {this}*/ {
+   , ProducedFrom {producer, descriptor} {
    VERBOSE_LIFE("Initializing...");
    Couple(descriptor);
    VERBOSE_LIFE("Initialized");
