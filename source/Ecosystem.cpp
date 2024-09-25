@@ -12,7 +12,7 @@
 /// Ecosystem construction                                                    
 ///   @param producer - the system producer                                   
 ///   @param descriptor - instructions for configuring the ecosystem          
-Ecosystem::Ecosystem(Life* producer, const Neat& descriptor)
+Ecosystem::Ecosystem(Life* producer, Describe descriptor)
    : Resolvable   {this}
    , ProducedFrom {producer, descriptor} {
    VERBOSE_LIFE("Initializing...");
