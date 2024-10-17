@@ -20,6 +20,11 @@ Ecosystem::Ecosystem(Life* producer, const Many& descriptor)
    VERBOSE_LIFE("Initialized");
 }
 
+/// First stage destruction                                                   
+void Ecosystem::Teardown() {
+   mOrganisms.Teardown();
+}
+
 /// Produce GUI elements in the system                                        
 ///   @param verb - creation verb to satisfy                                  
 void Ecosystem::Create(Verb& verb) {

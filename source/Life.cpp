@@ -25,6 +25,11 @@ Life::Life(Runtime* runtime, const Many&)
    VERBOSE_LIFE("Initialized");
 }
 
+/// First stage destruction                                                   
+void Life::Teardown() {
+   mEcosystems.Teardown();
+}
+
 /// Module update routine                                                     
 ///   @param deltaTime - time between updates                                 
 ///   @return false                                                           
