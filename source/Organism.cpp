@@ -23,7 +23,7 @@ Organism::Organism(Ecosystem* producer, const Many& descriptor)
 /// Organism update routine                                                   
 ///   @param deltaTime - time between updates                                 
 ///   @return false                                                           
-bool Organism::Update(Time deltaTime) {
+bool Organism::Update(Time) {
    //TODO
    return false;
 }
