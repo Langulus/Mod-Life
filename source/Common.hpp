@@ -6,9 +6,8 @@
 /// SPDX-License-Identifier: GPL-3.0-or-later                                 
 ///                                                                           
 #pragma once
-#include <Langulus.hpp>
 #include <Langulus/Life.hpp>
-#include <Flow/Factory.hpp>
+#include <Langulus/Flow/Factory.hpp>
 
 using namespace Langulus;
 
