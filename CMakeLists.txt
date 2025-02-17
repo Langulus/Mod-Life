@@ -15,6 +15,6 @@ file(GLOB_RECURSE
 add_langulus_mod(LangulusModLife ${LANGULUS_MOD_LIFE_SOURCES})
 
 if(LANGULUS_TESTING)
-    enable_testing()
+	enable_testing()
     add_subdirectory(test)
 endif()
