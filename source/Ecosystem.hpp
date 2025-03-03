@@ -7,6 +7,7 @@
 ///                                                                           
 #pragma once
 #include "Organism.hpp"
+#include <Langulus/Flow/Factory.hpp>
 
 
 ///                                                                           
