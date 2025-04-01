@@ -6,6 +6,7 @@
 /// SPDX-License-Identifier: GPL-3.0-or-later                                 
 ///                                                                           
 #include "Life.hpp"
+#include <Langulus/Profiler.hpp>
 
 LANGULUS_DEFINE_MODULE(
    Life, 0, "Life",
@@ -34,6 +35,7 @@ void Life::Teardown() {
 ///   @param deltaTime - time between updates                                 
 ///   @return false                                                           
 bool Life::Update(Time deltaTime) {
+   LANGULUS(PROFILE);
    for (auto& ecosystem : mEcosystems)
       ecosystem.Update(deltaTime);
    return false;
