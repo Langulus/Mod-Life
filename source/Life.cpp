@@ -18,7 +18,7 @@ LANGULUS_DEFINE_MODULE(
 /// Module construction                                                       
 ///   @param runtime - the runtime that owns the module                       
 ///   @param descriptor - instructions for configuring the module             
-Life::Life(Runtime* runtime, const Many&)
+Life::Life(Runtime* runtime, Many const&)
    : Resolvable {this}
    , A::Module  {runtime} {
    VERBOSE_LIFE("Initializing...");

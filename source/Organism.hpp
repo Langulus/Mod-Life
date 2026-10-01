@@ -27,7 +27,7 @@ private:
    Thing mAnatomy;
 
 public:
-   Organism(Ecosystem*, const Many&);
+   Organism(Ecosystem*, Many const&);
 
    bool Update(Time);
    void Refresh();
