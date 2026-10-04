@@ -20,7 +20,7 @@ LANGULUS_DEFINE_MODULE(
 ///   @param descriptor - instructions for configuring the module             
 Life::Life(Runtime* runtime, Many const&)
    : Resolvable {this}
-   , A::Module  {runtime} {
+   , Things::Module  {runtime} {
    VERBOSE_LIFE("Initializing...");
    VERBOSE_LIFE("Initialized");
 }

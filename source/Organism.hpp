@@ -16,8 +16,8 @@
 /// An animal, plant, or bacteria - a functional part of an ecosystem.        
 ///                                                                           
 struct Organism final : A::Organism, ProducedFrom<Ecosystem> {
-   LANGULUS(ABSTRACT) false;
-   LANGULUS(PRODUCER) Ecosystem;
+   using CTTI_Abstract = No;
+   using CTTI_Producer = Ecosystem;
    LANGULUS_BASES(A::Organism);
 
 private:

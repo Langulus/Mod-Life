@@ -16,8 +16,8 @@
 /// A place where organisms interact with each other and the world.           
 ///                                                                           
 struct Ecosystem final : A::Ecosystem, ProducedFrom<Life> {
-   LANGULUS(ABSTRACT) false;
-   LANGULUS(PRODUCER) Life;
+   using CTTI_Abstract = No;
+   using CTTI_Producer = Life;
    LANGULUS_BASES(A::Ecosystem);
    LANGULUS_VERBS(Verbs::Create);
 
