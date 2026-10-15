@@ -34,7 +34,7 @@ void Life::Teardown() {
 ///   @param deltaTime - time between updates                                 
 ///   @return false                                                           
 bool Life::Update(Time deltaTime) {
-   LANGULUS(PROFILE);
+   LglsProfile();
    for (auto& ecosystem : mEcosystems)
       ecosystem.Update(deltaTime);
    return false;
