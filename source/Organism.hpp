@@ -6,8 +6,8 @@
 /// SPDX-License-Identifier: GPL-3.0-or-later                                 
 ///                                                                           
 #pragma once
-#include "Common.hpp"
-#include <Langulus/Flow/Producible.hpp>
+#include "Export.hpp"
+#include <Langulus/Producible.hpp>
 
 
 ///                                                                           
@@ -15,10 +15,10 @@
 ///                                                                           
 /// An animal, plant, or bacteria - a functional part of an ecosystem.        
 ///                                                                           
-struct Organism final : A::Organism, ProducedFrom<Ecosystem> {
-   using CTTI_Abstract = No;
-   using CTTI_Producer = Ecosystem;
-   LANGULUS_BASES(A::Organism);
+struct Organism final : Things::Organism, ProducedFrom<Ecosystem> {
+   using CTTI_Abstract  = No;
+   using CTTI_Producer  = Ecosystem;
+   using CTTI_Bases     = Things::Organism;
 
 private:
    // A private hierarchy of organs and tissues                         

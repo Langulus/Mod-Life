@@ -18,19 +18,19 @@ SCENARIO("Ecosystem and Organism creation", "[life]") {
          auto root = Thing::Root<false>("Life");
 
          WHEN("Components created via abstractions") {
-            auto ecosystem = root.CreateUnit<A::Ecosystem>();
-            auto organism = root.CreateUnit<A::Organism>();
+            auto ecosystem = root.CreateUnit<Things::Ecosystem>();
+            auto organism = root.CreateUnit<Things::Organism>();
 
             // Update once                                              
             root.Update({});
             root.DumpHierarchy();
 
             REQUIRE(ecosystem.GetCount() == 1);
-            REQUIRE(ecosystem.CastsTo<A::Ecosystem>(1));
+            REQUIRE(ecosystem.CastsTo<Things::Ecosystem>(1));
             REQUIRE(ecosystem.IsSparse());
 
             REQUIRE(organism.GetCount() == 1);
-            REQUIRE(organism.CastsTo<A::Organism>(1));
+            REQUIRE(organism.CastsTo<Things::Organism>(1));
             REQUIRE(organism.IsSparse());
 
             REQUIRE(root.GetUnits().GetCount() == 2);
@@ -38,19 +38,19 @@ SCENARIO("Ecosystem and Organism creation", "[life]") {
 
       #if LANGULUS_FEATURE(MANAGED_REFLECTION)
          WHEN("Components created via tokens") {
-            auto ecosystem = root.CreateUnitToken("Ecosystem");
-            auto organism = root.CreateUnitToken("Organism");
+            auto ecosystem = root.CreatePartToken("Ecosystem");
+            auto organism = root.CreatePartToken("Organism");
 
             // Update once                                              
             root.Update({});
             root.DumpHierarchy();
 
             REQUIRE(ecosystem.GetCount() == 1);
-            REQUIRE(ecosystem.CastsTo<A::Ecosystem>(1));
+            REQUIRE(ecosystem.CastsTo<Things::Ecosystem>(1));
             REQUIRE(ecosystem.IsSparse());
 
             REQUIRE(organism.GetCount() == 1);
-            REQUIRE(organism.CastsTo<A::Organism>(1));
+            REQUIRE(organism.CastsTo<Things::Organism>(1));
             REQUIRE(organism.IsSparse());
 
             REQUIRE(root.GetUnits().GetCount() == 2);

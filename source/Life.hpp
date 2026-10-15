@@ -15,9 +15,9 @@
 ///                                                                           
 /// Manages and produces ecosystems                                           
 ///                                                                           
-struct Life final : A::Life {
+struct Life final : Things::Life {
    using CTTI_Abstract = No;
-   LANGULUS_BASES(A::Life);
+   LANGULUS_BASES(Things::Life);
    LANGULUS_VERBS(Verbs::Create);
 
 private:
