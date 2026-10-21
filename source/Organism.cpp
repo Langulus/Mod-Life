@@ -13,7 +13,7 @@
 ///   @param producer - the producer                                          
 ///   @param descriptor - instructions for configuring the organism           
 Organism::Organism(Ecosystem* producer, Many const& descriptor)
-   : Resolvable   {this}
+   : Downcastable   {this}
    , ProducedFrom {producer, descriptor} {
    VERBOSE_LIFE("Initializing...");
    Couple(descriptor);
