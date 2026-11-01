@@ -14,12 +14,11 @@
 ///   Ecosystem                                                               
 ///                                                                           
 /// A place where organisms interact with each other and the world.           
-///                                                                           
 struct Ecosystem final : Things::Ecosystem, ProducedFrom<Life> {
-   using CTTI_Abstract = No;
-   using CTTI_Producer = Life;
-   LANGULUS_BASES(Things::Ecosystem);
-   LANGULUS_VERBS(Verbs::Create);
+   using CTTI_Abstract  = No;
+   using CTTI_Producer  = Life;
+   using CTTI_Bases     = Things::Ecosystem;
+   using CTTI_Ability   = Verbs::Create;
 
 private:
    // List of participating organisms                                   

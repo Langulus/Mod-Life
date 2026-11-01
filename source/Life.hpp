@@ -14,11 +14,10 @@
 ///   Life module                                                             
 ///                                                                           
 /// Manages and produces ecosystems                                           
-///                                                                           
 struct Life final : Things::Life {
-   using CTTI_Abstract = No;
-   LANGULUS_BASES(Things::Life);
-   LANGULUS_VERBS(Verbs::Create);
+   using CTTI_Abstract  = No;
+   using CTTI_Bases     = Things::Life;
+   using CTTI_Ability   = Verbs::Create;
 
 private:
    // List of created input gatherers                                   
