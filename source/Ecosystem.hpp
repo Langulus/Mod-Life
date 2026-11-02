@@ -25,7 +25,7 @@ private:
    TFactory<Organism> mOrganisms;
 
 public:
-   Ecosystem(Life*, Many const&);
+   Ecosystem(Life*, Neat const&);
 
    bool Update(Time);
    void Create(Verb&);

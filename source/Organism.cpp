@@ -10,10 +10,10 @@
 
 
 /// Organism construction                                                     
-///   @param producer - the producer                                          
-///   @param descriptor - instructions for configuring the organism           
-Organism::Organism(Ecosystem* producer, Many const& descriptor)
-   : Downcastable   {this}
+///   @param producer the producer                                            
+///   @param descriptor instructions for configuring the organism             
+Organism::Organism(Ecosystem* producer, Neat const& descriptor)
+   : Downcastable {this}
    , ProducedFrom {producer, descriptor} {
    VERBOSE_LIFE("Initializing...");
    Couple(descriptor);

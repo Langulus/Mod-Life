@@ -14,7 +14,6 @@
 ///   Organism                                                                
 ///                                                                           
 /// An animal, plant, or bacteria - a functional part of an ecosystem.        
-///                                                                           
 struct Organism final : Things::Organism, ProducedFrom<Ecosystem> {
    using CTTI_Abstract  = No;
    using CTTI_Producer  = Ecosystem;
@@ -27,7 +26,7 @@ private:
    Thing mAnatomy;
 
 public:
-   Organism(Ecosystem*, Many const&);
+   Organism(Ecosystem*, Neat const&);
 
    bool Update(Time);
    void Refresh();

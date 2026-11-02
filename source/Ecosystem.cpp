@@ -10,10 +10,10 @@
 
 
 /// Ecosystem construction                                                    
-///   @param producer - the system producer                                   
-///   @param descriptor - instructions for configuring the ecosystem          
-Ecosystem::Ecosystem(Life* producer, Many const& descriptor)
-   : Downcastable   {this}
+///   @param producer the system producer                                     
+///   @param descriptor instructions for configuring the ecosystem            
+Ecosystem::Ecosystem(Life* producer, Neat const& descriptor)
+   : Downcastable {this}
    , ProducedFrom {producer, descriptor} {
    VERBOSE_LIFE("Initializing...");
    Couple(descriptor);
@@ -26,13 +26,13 @@ void Ecosystem::Teardown() {
 }
 
 /// Produce GUI elements in the system                                        
-///   @param verb - creation verb to satisfy                                  
+///   @param verb creation verb to satisfy                                    
 void Ecosystem::Create(Verb& verb) {
    mOrganisms.Create(this, verb);
 }
 
 /// Ecosystem update routine                                                  
-///   @param deltaTime - time between updates                                 
+///   @param deltaTime time between updates                                   
 ///   @return false                                                           
 bool Ecosystem::Update(Time deltaTime) {
    for (auto& organism : mOrganisms)

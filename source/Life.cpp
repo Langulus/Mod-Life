@@ -6,6 +6,7 @@
 /// SPDX-License-Identifier: GPL-3.0-or-later                                 
 ///                                                                           
 #include "Life.hpp"
+#include <Langulus/Profiler.hpp>
 
 LANGULUS_DEFINE_MODULE(
    Life, 0, "Life",
@@ -16,11 +17,11 @@ LANGULUS_DEFINE_MODULE(
 
 
 /// Module construction                                                       
-///   @param runtime - the runtime that owns the module                       
-///   @param descriptor - instructions for configuring the module             
-Life::Life(Runtime* runtime, Many const&)
+///   @param runtime the runtime that owns the module                         
+///   @param descriptor instructions for configuring the module               
+Life::Life(Runtime* runtime, Neat const&)
    : Downcastable {this}
-   , Things::Module  {runtime} {
+   , Module       {runtime} {
    VERBOSE_LIFE("Initializing...");
    VERBOSE_LIFE("Initialized");
 }
@@ -31,7 +32,7 @@ void Life::Teardown() {
 }
 
 /// Module update routine                                                     
-///   @param deltaTime - time between updates                                 
+///   @param deltaTime time between updates                                   
 ///   @return false                                                           
 bool Life::Update(Time deltaTime) {
    LglsProfile();
@@ -41,7 +42,7 @@ bool Life::Update(Time deltaTime) {
 }
 
 /// Create/Destroy ecosystems                                                 
-///   @param verb - the creation/destruction verb                             
+///   @param verb the creation/destruction verb                               
 void Life::Create(Verb& verb) {
    mEcosystems.Create(this, verb);
 }
