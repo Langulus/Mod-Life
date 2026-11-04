@@ -33,7 +33,7 @@ SCENARIO("Ecosystem and Organism creation", "[life]") {
             REQUIRE(organism.CastsTo<Things::Organism>(1));
             REQUIRE(organism.IsSparse());
 
-            REQUIRE(root.GetUnits().GetCount() == 2);
+            REQUIRE(root.GetParts().GetCount() == 2);
          }
 
       #if LANGULUS_FEATURE(MANAGED_REFLECTION)
@@ -53,7 +53,7 @@ SCENARIO("Ecosystem and Organism creation", "[life]") {
             REQUIRE(organism.CastsTo<Things::Organism>(1));
             REQUIRE(organism.IsSparse());
 
-            REQUIRE(root.GetUnits().GetCount() == 2);
+            REQUIRE(root.GetParts().GetCount() == 2);
          }
       #endif
 
