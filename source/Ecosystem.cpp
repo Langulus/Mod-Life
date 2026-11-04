@@ -12,7 +12,7 @@
 /// Ecosystem construction                                                    
 ///   @param producer the system producer                                     
 ///   @param descriptor instructions for configuring the ecosystem            
-Ecosystem::Ecosystem(Life* producer, Neat const& descriptor)
+Ecosystem::Ecosystem(Life const* producer, Neat const& descriptor)
    : Downcastable {this}
    , ProducedFrom {producer, descriptor} {
    VERBOSE_LIFE("Initializing...");
