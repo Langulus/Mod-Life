@@ -18,8 +18,8 @@ SCENARIO("Ecosystem and Organism creation", "[life]") {
          auto root = Thing::Root<false>("Life");
 
          WHEN("Components created via abstractions") {
-            auto ecosystem = root.CreateUnit<Things::Ecosystem>();
-            auto organism = root.CreateUnit<Things::Organism>();
+            auto ecosystem = root.CreatePart<Things::Ecosystem>();
+            auto organism = root.CreatePart<Things::Organism>();
 
             // Update once                                              
             root.Update({});

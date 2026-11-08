@@ -10,6 +10,7 @@
 #include <Langulus/Factory.hpp>
 
 using namespace Langulus;
+using Things::Thing;
 
 struct Life;
 struct Ecosystem;

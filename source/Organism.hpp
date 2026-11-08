@@ -20,7 +20,7 @@ struct Organism final : Things::Organism, ProducedFrom<Ecosystem> {
    using CTTI_Bases     = Things::Organism;
 
 private:
-   // A private hierarchy of organs and tissues                         
+   // A private hierarchy of organs and tissues.                        
    // These will get spilled when the organism dies and can no longer   
    // maintain filtering the verbs (a.k.a. homeostasis).                
    Thing mAnatomy;
