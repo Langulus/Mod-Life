@@ -5,11 +5,11 @@
 ///                                                                           
 /// SPDX-License-Identifier: GPL-3.0-or-later                                 
 ///                                                                           
-#include <Langulus/Life.hpp>
+#include <Langulus/CppAPI/Life.hpp>
 #include <Langulus/Testing.hpp>
 
 
-SCENARIO("Ecosystem and Organism creation", "[life]") {
+SCENARIO("Ecosystem and Organism creation") {
    static Allocator::State memoryState;
    
    for (int repeat = 0; repeat != 10; ++repeat) {
